@@ -1,5 +1,9 @@
 package FileRecording;
 
+/**
+ * @author Max Steblevskiy(JavaAbuser) on 25.12.21
+ */
+
 import java.io.*;
 import java.util.Map;
 
