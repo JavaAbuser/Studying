@@ -26,8 +26,8 @@ public class Main {
         String result = matcher.find() ? "Email format is correct" : "Email format is not correct";
         System.out.println(result);
     }
-    public static void validateDate(String date){
-        Pattern pattern = Pattern.compile("[0-2][0-9]\\.[0-9][0-9]\\.\\d{4} | [3][0-1]\\.[0-9][0-9]\\.\\d{4}");
+   public static void validateDate(String date){
+        Pattern pattern = Pattern.compile("([0-2][0-9] | [3][0-1])\\.[0-9][0-9]\\.\\d{4}");
         Matcher matcher = pattern.matcher(date);
         String result = matcher.find() ? "Date format is correct" : "Date format is not correct";
         System.out.println(result);
