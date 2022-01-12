@@ -4,12 +4,12 @@ import java.sql.*;
 
 public class JDBCWithPreparedStatement {
     public static void main(String[] args) throws ClassNotFoundException {
-        String url = "jdbc:mysql://localhost:3306/base";
-        String userName = "root";
-        String password = "root";
+        final String URL = "jdbc:mysql://localhost:3306/base";
+        final String USERNAME = "root";
+        final String PASSWORD = "root";
 
         Class.forName("com.mysql.cj.jdbc.Driver");
-        try (Connection connection = DriverManager.getConnection(url, userName, password)) {
+        try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
             PreparedStatement preparedStatement = null;
             try {
                 preparedStatement = connection.prepareStatement("INSERT INTO `order` (name, price) VALUES (?, ?)");
