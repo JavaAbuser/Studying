@@ -8,12 +8,12 @@ import java.util.Scanner;
 
 public class JDBCWithStatement {
     public static void main(String[] args) throws ClassNotFoundException {
-        String url = "jdbc:mysql://localhost:3306/base";
-        String userName = "root";
-        String password = "root";
+        final String URL = "jdbc:mysql://localhost:3306/base";
+        final String USERNAME = "root";
+        final String PASSWORD = "root";
 
         Class.forName("com.mysql.cj.jdbc.Driver");
-        try (Connection connection = DriverManager.getConnection(url, userName, password);
+        try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
              BufferedReader bufferedReader = new BufferedReader(new FileReader(
                      "C:\\Users\\Максим\\Desktop\\StudyingPractice\\JDBC_1\\src\\com\\company\\sql\\orders.sql"
              ));
@@ -34,7 +34,7 @@ public class JDBCWithStatement {
                     int id = resultSet.getInt(1);
                     String name = resultSet.getString(2);
                     double price = resultSet.getDouble(3);
-                    System.out.println("id = " + id + ", name = " + name + " price = " + price);
+                    System.out.println("id = " + id + ", name = " + name + ", price = " + price);
                 }
             } finally {
                 if (resultSet != null) {
