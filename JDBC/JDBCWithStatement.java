@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class JDBCWithStatement {
-    public static void main(String[] args) throws ClassNotFoundException{
+    public static void main(String[] args) throws ClassNotFoundException {
         String url = "jdbc:mysql://localhost:3306/base";
         String userName = "root";
         String password = "root";
@@ -18,11 +18,11 @@ public class JDBCWithStatement {
                      "C:\\Users\\Максим\\Desktop\\StudyingPractice\\JDBC_1\\src\\com\\company\\sql\\orders.sql"
              ));
              Scanner scanner = new Scanner(bufferedReader);
-             java.sql.Statement statement = connection.createStatement()) {
+             Statement statement = connection.createStatement()) {
             String line = "";
-            while(scanner.hasNext()){
+            while (scanner.hasNext()) {
                 line = scanner.next();
-                if(line.endsWith(";")){
+                if (line.endsWith(";")) {
                     line = line.substring(line.length() - 1);
                 }
                 statement.executeUpdate(line);
@@ -37,14 +37,13 @@ public class JDBCWithStatement {
                     System.out.println("id = " + id + ", name = " + name + " price = " + price);
                 }
             } finally {
-                if(resultSet != null){
+                if (resultSet != null) {
                     resultSet.close();
                 }
             }
         } catch (IOException e) {
             System.out.println("IOException was throw.");
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             System.err.println("SQL Exception: " + e.getMessage());
             System.err.println("SQL State: " + e.getSQLState());
             System.err.println("SQL Error code: " + e.getErrorCode());
