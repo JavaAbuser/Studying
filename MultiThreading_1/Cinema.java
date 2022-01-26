@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Max Steblevskiy(JavaAbuser) on 2.01.2022
+ * @author Max Steblevskiy(JavaAbuser) on 27.01.2022
  */
 public class Cinema {
     public static List<Ticket> ticketList = null;
