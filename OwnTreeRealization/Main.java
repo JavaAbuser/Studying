@@ -11,7 +11,6 @@ public class Main {
         tree.insert(8, "EIGHT");
         tree.insert(5, "FIVE");
         tree.find(5).printNode();
-
     }
 
 }
